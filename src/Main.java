@@ -8,7 +8,8 @@ public class Main {
     public static void main(String[] args) {
         Tools.titlePrinter("MENU", true);
         Tools.printToConsole("""
-                1... MobilePhone
+                1... Opgave 1: Definere og bruge en simpel klasse
+                2... Opgave 2: Brug af Java biblioteksklasser
                 """);
 
         int userInput = input.nextInt();
@@ -16,6 +17,9 @@ public class Main {
         switch (userInput) {
             case 1:
                 promptMobileMenu();
+                break;
+            case 2:
+                promptOpgToMenu();
                 break;
         }
     }
@@ -79,6 +83,27 @@ public class Main {
 
         Tools.printToConsole("Succes! Price has been changed!");
         Tools.printToConsole(mobilePhones.get(userInput - 1).getBrand() + " | " + mobilePhones.get(userInput - 1).getModel() + " | " + "$" + mobilePhones.get(userInput - 1).getPrice());
+        Tools.waitForUser(input);
+
+    }
+
+    private static void promptOpgToMenu() {
+        Date today = new Date();
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+        for (int n = 0; n < 5; n++) {
+            numbers.add((int) (Math.random() * 10));
+        }
+
+        Tools.printToConsole(today.toString(), true);
+        System.out.println();
+        int n = 1;
+        for (int number : numbers) {
+            Tools.printToConsole("#" + n + ": " + number);
+            n++;
+        }
+
+        System.out.println();
         Tools.waitForUser(input);
 
     }

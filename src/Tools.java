@@ -24,15 +24,15 @@ public class Tools {
         printToConsole(text, false);
     }
 
+    public static void printToConsole(int number) {
+        printToConsole(String.valueOf(number), false);
+    }
+
     public static void titlePrinter(String title) {
-        printToConsole("---------- " + title + " ----------");
+        titlePrinter(title, false);
     }
 
     public static void titlePrinter(String title, boolean clear) {
-        if (clear) {
-            printToConsole("---------- " + title + " ----------", true);
-        } else {
-            printToConsole("---------- " + title + " ----------");
-        }
+        printToConsole("---------- " + title + " ----------", clear);
     }
 }
