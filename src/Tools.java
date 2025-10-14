@@ -21,6 +21,18 @@ public class Tools {
     }
 
     public static void printToConsole(String text) {
-        printToConsole(text, true);
+        printToConsole(text, false);
+    }
+
+    public static void titlePrinter(String title) {
+        printToConsole("---------- " + title + " ----------");
+    }
+
+    public static void titlePrinter(String title, boolean clear) {
+        if (clear) {
+            printToConsole("---------- " + title + " ----------", true);
+        } else {
+            printToConsole("---------- " + title + " ----------");
+        }
     }
 }
