@@ -1,5 +1,3 @@
-
-import javax.tools.Tool;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -152,7 +150,6 @@ public class Main {
         books.add(new Book("The Catcher in the Fry          ", "J.D. Snacklinger        ", 9.25));
         books.add(new Book("Gone with the Wine              ", "Margaret Drinkson       ", 14.10));
         books.add(new Book("A Game of Cones                 ", "George R.R. Cream       ", 12.99));
-
         printBooks(books);
     }
 

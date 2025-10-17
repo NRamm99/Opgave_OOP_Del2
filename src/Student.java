@@ -1,7 +1,7 @@
 public class Student {
-    private String name;
-    private int age;
-    private String studentID;
+    private final String name;
+    private final int age;
+    private final String studentID;
 
     public Student(String name, int age, String studentID) {
         this.name = name;
