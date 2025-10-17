@@ -12,6 +12,7 @@ public class Main {
                 1... Opgave 1: Definere og bruge en simpel klasse
                 2... Opgave 2: Brug af Java biblioteksklasser
                 3... Opgave 3: Arrays af objekter
+                4... Opgave 4: Indkapsling og brug af getter- og setter-metoder
                 """);
 
         int userInput = input.nextInt();
@@ -25,6 +26,9 @@ public class Main {
                 break;
             case 3:
                 promptOpgTreMenu();
+                break;
+            case 4:
+                promptOpgFireMenu();
                 break;
         }
     }
@@ -133,6 +137,29 @@ public class Main {
         Tools.titlePrinter("STUDENTS");
         for (Student student : students) {
             Tools.printToConsole(student.getName() + " | age: " + student.getAge() + " | ID: " + student.getStudentID());
+        }
+    }
+
+    private static void promptOpgFireMenu() {
+        ArrayList<Book> books = new ArrayList<>();
+        books.add(new Book("Hairy Potter: The Last Shave    ", "JK Rolling              ", 10.99));
+        books.add(new Book("The Hobbit: Return of the Snacks", "J.R.R. Tollkin          ", 12.49));
+        books.add(new Book("To Grill a Mockingbird          ", "Harper Steam            ", 9.75));
+        books.add(new Book("Fifty Shades of Earl Grey       ", "Tea L. James            ", 11.50));
+        books.add(new Book("The Great Catsby                ", "F. Scoot Fitzpurrald    ", 8.99));
+        books.add(new Book("Lord of the Fries               ", "J.R. Grease Tolkien     ", 13.25));
+        books.add(new Book("Pride and Protein Shakes        ", "Jane Gainz              ", 10.49));
+        books.add(new Book("The Catcher in the Fry          ", "J.D. Snacklinger        ", 9.25));
+        books.add(new Book("Gone with the Wine              ", "Margaret Drinkson       ", 14.10));
+        books.add(new Book("A Game of Cones                 ", "George R.R. Cream       ", 12.99));
+
+        printBooks(books);
+    }
+
+    private static void printBooks(ArrayList<Book> books) {
+        Tools.titlePrinter("BOOKS");
+        for (Book book : books) {
+            Tools.printToConsole(book.getTitle() + " | By: " + book.getAuthor() + " | Price: $" + book.getPrice());
         }
     }
 }
