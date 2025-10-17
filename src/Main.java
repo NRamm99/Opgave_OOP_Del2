@@ -1,4 +1,5 @@
 
+import javax.tools.Tool;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,6 +11,7 @@ public class Main {
         Tools.printToConsole("""
                 1... Opgave 1: Definere og bruge en simpel klasse
                 2... Opgave 2: Brug af Java biblioteksklasser
+                3... Opgave 3: Arrays af objekter
                 """);
 
         int userInput = input.nextInt();
@@ -20,6 +22,9 @@ public class Main {
                 break;
             case 2:
                 promptOpgToMenu();
+                break;
+            case 3:
+                promptOpgTreMenu();
                 break;
         }
     }
@@ -106,5 +111,28 @@ public class Main {
         System.out.println();
         Tools.waitForUser(input);
 
+    }
+
+    private static void promptOpgTreMenu() {
+        ArrayList<Student> students = new ArrayList<>();
+        students.add(new Student("Nichlas Ramm", 26, "260899M"));
+        students.add(new Student("Emma Jensen", 22, "150302F"));
+        students.add(new Student("Lucas Sørensen", 25, "031298M"));
+        students.add(new Student("Freja Nielsen", 21, "080504F"));
+        students.add(new Student("Magnus Pedersen", 23, "191201M"));
+        students.add(new Student("Clara Møller", 24, "290399F"));
+        students.add(new Student("Oliver Andersen", 27, "041197M"));
+        students.add(new Student("Sofie Kristensen", 20, "120505F"));
+        students.add(new Student("Noah Rasmussen", 28, "070696M"));
+        students.add(new Student("Ida Thomsen", 23, "231201F"));
+
+        printStudents(students);
+    }
+
+    private static void printStudents(ArrayList<Student> students) {
+        Tools.titlePrinter("STUDENTS");
+        for (Student student : students) {
+            Tools.printToConsole(student.getName() + " | age: " + student.getAge() + " | ID: " + student.getStudentID());
+        }
     }
 }
